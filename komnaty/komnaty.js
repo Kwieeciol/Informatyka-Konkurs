@@ -112,28 +112,28 @@ function get_adjacent_cells(grid, y, x) {
 }
 
 function get_chamber(grid, y, x) {
-    const is_not_in_grid = (grid, y, x) => {
-        for ([_y, _x] of grid) {
-            if (_y === y && _x === x) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    let positions = [...get_adjacent_cells(grid, y, x)];
-    positions.push([y, x]);
-
-    for (pos of positions) {
-        let surroundings = get_adjacent_cells(grid, ...pos);
-
-        for (s of surroundings) {
-            if (is_not_in_grid(grid, ...s)) {
-                positions.push(get_adjacent_cells(grid, ...s));
-            }
-        }
-    }
-    return delete_duplicates(positions);
+//    const is_not_in_grid = (grid, y, x) => {
+//        for ([_y, _x] of grid) {
+//            if (_y === y && _x === x) {
+//                return true;
+//            }
+//        }
+//        return false;
+//    }
+//
+//    let positions = get_adjacent_cells(grid, y, x);
+//    positions.push([y, x]);
+//
+//    for (pos of positions) {
+//        let surroundings = get_adjacent_cells(grid, ...pos);
+//
+//        for (s of surroundings) {
+//            if (is_not_in_grid(grid, ...s)) {
+//                positions.push(get_adjacent_cells(grid, ...s));
+//            }
+//        }
+//    }
+//    return delete_duplicates(positions);
 }
 
 console.log(get_chamber(grid, 3, 2));
