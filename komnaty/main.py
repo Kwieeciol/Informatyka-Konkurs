@@ -70,7 +70,7 @@ def get_surrounding_positions(grid, y: int, x: int) -> list:
 
 def get_chamber(grid, y: int, x: int) -> list:
     # Getting the initial positions
-    positions = list(set([(y, x), *get_adjancent_cells(grid, y, x)]))
+    positions = get_adjancent_cells(grid, y, x)
 
     for pos in positions:
         surroundings = get_adjancent_cells(grid, *pos)
