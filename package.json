@@ -1,14 +1,13 @@
 {
-  "name": "konkurs",
+  "name": "Informaryka-Konkurs",
   "version": "1.0.0",
-  "description": "",
-  "main": "nww_nwd.js",
+  "description": "Zbiór zadań z konkursu Gremliny oraz Gnomy, również zbiór niektórych zadań zrobionych na lekcji informatyki",
+  "main": "",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "komnaty": "node komnaty.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Kwieeciol",
   "license": "MIT",
   "dependencies": {
     "prompt-sync": "^4.2.0"
