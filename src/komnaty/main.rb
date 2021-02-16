@@ -56,7 +56,7 @@ end
 def get_adjacent_cells(grid, y, x)
     adjacent_x = get_adjacent_x(grid, y, x)
     adjacent_y = get_adjacent_y(grid, y, x)
-    return (adjacent_x + adjacent_y).uniq
+    return adjacent_x | adjacent_y
 end
 
 def get_surrounding_positions(grid, y, x)
