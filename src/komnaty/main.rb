@@ -63,7 +63,7 @@ def get_surrounding_positions(grid, y, x)
     positions = [[y + 1, x], [y, x - 1], [y, x + 1], [y - 1, x]]
     correct = []
 
-    positions.each do | y, x |
+    positions.each do |y, x|
         if y > 0 and x > 0 && y <= grid.length and x <= grid.length
             correct << [y, x]
         end
@@ -74,10 +74,10 @@ end
 def get_chamber(grid, y, x)
     positions = get_adjacent_cells(grid, y, x)
 
-    positions.each do | y, x |
+    positions.each do |y, x|
         surroundings = get_adjacent_cells(grid, y, x)
 
-        surroundings.each do | s |
+        surroundings.each do |s|
             if !positions.include? s
                 positions << s
             end
@@ -89,7 +89,7 @@ end
 def get_chamber_count(grid, chamber)
     count = 0
 
-    chamber.each do | y, x |
+    chamber.each do |y, x|
         surroundings = get_surrounding_positions(grid, y, x)
 
         surroundings.each do | cell |
@@ -108,19 +108,19 @@ def main()
     print "> "
     n = gets.chomp().to_i
 
-    n.times do | i |
+    n.times do |i|
         print "> "
         row = gets.chomp().split("")
         grid << row
     end
 
-    n.times do | i |
+    n.times do |i|
         print "> "
         y, x = gets.chomp().split(" ")
         free_spaces << [y.to_i, x.to_i]
     end
 
-    free_spaces.each do | y, x |
+    free_spaces.each do |y, x|
         chamber = get_chamber(grid, y, x)
         count = get_chamber_count(grid, chamber)
         puts count
