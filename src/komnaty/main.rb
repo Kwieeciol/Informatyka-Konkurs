@@ -17,14 +17,14 @@ def get_adjacent_x(grid, y, x)
     row = get_row(grid, y)
     positions = []
 
-    row[x - 1..].each_with_index do | cell, x_ |
+    row[x - 1..].each_with_index do |cell, x_|
         current = [y, x_ + x]
         break if cell == "#"
 
         positions << current
     end
 
-    row[..x - 1].reverse.each_with_index do | cell, x_ |
+    row[..x - 1].reverse.each_with_index do |cell, x_|
         current = [y, x - x_]
         break if cell == "#"
 
@@ -37,14 +37,14 @@ def get_adjacent_y(grid, y, x)
     col = get_col(grid, x)
     positions = []
 
-    col[y - 1..].each_with_index do | cell, y_ |
+    col[y - 1..].each_with_index do |cell, y_|
         current = [y_ + y, x]
         break if cell == "#"
 
         positions << current
     end
 
-    col[..y - 1].reverse.each_with_index do | cell, y_ |
+    col[..y - 1].reverse.each_with_index do |cell, y_|
         current = [y - y_, x]
         break if cell == "#"
 
