@@ -8,10 +8,10 @@ def is_possible()
     x, y = $possible[-1]
     if !x.nil? and !y.nil?
         statement = x + $w <= $a && y + $h <= $b
-        # return statement
+        return statement
     else
         statement = $w <= $a && $h <= $b
-        # return statement
+        return statement
     end
 end
 
