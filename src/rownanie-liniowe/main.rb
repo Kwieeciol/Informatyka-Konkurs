@@ -4,7 +4,7 @@ eq = gets.chomp()
 pattern = /\D+/
 
 if !eq.match(/x/)
-    puts "Nie wpisałeś wartości x"
+    abort("Nie wpisałeś wartości x")
 end
 
 values = eq.split(pattern).map(&:to_f)
