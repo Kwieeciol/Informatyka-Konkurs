@@ -1,0 +1,4 @@
+RÓWNANIE-LINIOWE
+    read(a, b, c)
+    x <- a / (b + c)
+    write(x)
