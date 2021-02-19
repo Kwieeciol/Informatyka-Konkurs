@@ -1,0 +1,8 @@
+SUMA-CYFR-LICZBY-NATURALNEJ(n)
+    read(n)
+    suma <- 0
+    while (n > 0)
+        suma <- suma + (n mod 10)
+        n <- n div 10
+
+    write(suma)
