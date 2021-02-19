@@ -21,4 +21,4 @@ while is_possible()
     $possible << pos
 end
 
-p $possible.length
+puts $possible.length
