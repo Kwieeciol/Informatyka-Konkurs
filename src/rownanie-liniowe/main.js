@@ -1,14 +1,22 @@
 const prompt = require("prompt-sync")();
 
-let pattern = /\D+/
-let eq = prompt("Wpisz równanie liniowe: ")
+let eq_pattern = /\D+/
+let op_pattern = /[\*\+-\/]/
+let eq = prompt("Wpisz równanie liniowe: ");
+
+let operators = {
+    '+': (x, y) => (x + y),
+    '-': (x, y) => (x - y)
+}
 
 if (!eq.includes("x")) {
     console.log("Nie wpisałeś wartości x");
     process.exit();
 }
 
-let values = eq.split(pattern).map(x => parseInt(x));
+let values = eq.split(eq_pattern).map(x => parseInt(x));
+let operator = eq.match(op_pattern)[0];
+let func = operators[operator]
 
 if (values.length != 3) {
     console.log("Niewłaściwy syntax równania");
@@ -19,5 +27,5 @@ if (values.length != 3) {
 }
 
 let [a, b, c] = values;
-let x = a / (b + c)
+let x = a / func(b, c)
 console.log(`x = ${x}`);

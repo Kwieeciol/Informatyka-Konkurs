@@ -1,13 +1,23 @@
 print "Wpisz równanie liniowe: "
 eq = gets.chomp()
 
-pattern = /\D+/
+eq_pattern = /\D+/
+op_pattern = /[\*\+-\/]/
+
+operators = {
+    "+" => Proc.new { |x, y| x + y },
+    "-" => Proc.new { |x, y| x - y }
+}
 
 if !eq.match(/x/)
     abort("Nie wpisałeś wartości x")
+elsif !operators.keys.any? { |k| eq.include?(k) }
+    abort()
 end
 
-values = eq.split(pattern).map(&:to_f)
+values = eq.split(eq_pattern).map(&:to_f)
+operator = eq.match(op_pattern)[0]
+func = operators[operator]
 
 if values.length != 3
     abort("Niewłaściwy syntax równania")
@@ -16,5 +26,5 @@ elsif values[0] == 0
 end
 
 a, b, c = values
-x = a / (b + c)
+x = a / (func.call(b, c))
 puts "x = #{x}"
