@@ -1,4 +1,7 @@
 RÓWNANIE-LINIOWE
     read(a, b, c)
-    x <- a / (b + c)
-    write(x)
+    if a == 0
+        write(x nie moze byc 0)
+    else
+        x <- a / (b + c)
+        write(x)

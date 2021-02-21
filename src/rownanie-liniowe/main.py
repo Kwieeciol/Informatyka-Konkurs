@@ -34,6 +34,8 @@ print(f"x = {x}")
 # a = int(input("> "))
 # b = int(input("> "))
 # c = int(input("> "))
-
-# x = a / (b + c)
-# print(x)
+# if a == 0:
+#     print("x nie może byc 0")
+# else:
+#     x = a / (b + c)
+#     print(x)
