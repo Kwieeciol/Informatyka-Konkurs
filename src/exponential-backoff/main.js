@@ -11,7 +11,6 @@ function randrange(min, max) {
 	return Math.round(uniform(min, max));
 }
 
-
 class ExponentialBackoff {
 	constructor({base=1, integral=false}) {
 		this._base = base;
