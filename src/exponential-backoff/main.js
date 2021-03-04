@@ -28,21 +28,21 @@ class ExponentialBackoff {
 	}
 
 	delay() {
-		let invocation = monotonic()
-		let interval = invocation - this._last_invocation
-		this._last_invocation = invocation
+		let invocation = monotonic();
+		let interval = invocation - this._last_invocation;
+		this._last_invocation = invocation;
 
 		if (interval > this._reset_time) {
-			this._exp = 0
+			this._exp = 0;
 		}
 
-		this._exp = Math.min(this._exp + 1, this._max)
-		return this._randfunc(0, this._base * 2 ** this._exp)
+		this._exp = Math.min(this._exp + 1, this._max);
+		return this._randfunc(0, this._base * 2 ** this._exp);
 	}
 }
 
 
-const backoff = new ExponentialBackoff({integral: false})
+const backoff = new ExponentialBackoff({integral: false});
 
 for (let i = 0; i < 10; i++) {
 	console.log(backoff.delay());
