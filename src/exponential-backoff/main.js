@@ -1,14 +1,9 @@
+const uniform = (min, max) => {return Math.random() * (max + 1 - min) + min}
+const randrange = (min, max) => {return Math.round(uniform(min, max))}
+
 function monotonic() {
 	let [seconds, nanos] = process.hrtime();
 	return seconds * 1000 + nanos / 1000000;
-}
-
-function uniform(min, max) {
-	return Math.random() * (max + 1 - min) + min;
-}
-
-function randrange(min, max) {
-	return Math.round(uniform(min, max));
 }
 
 class ExponentialBackoff {
