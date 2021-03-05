@@ -9,7 +9,6 @@ except Exception as exc:
 time = [x / 10 for x in range(0, A * 10, T)][:N]
 amplitude = [math.sin(x) for x in time]
 
-
 for amp in amplitude:
     v = round(A - (A * amp))
     print(" " * v + ".")
