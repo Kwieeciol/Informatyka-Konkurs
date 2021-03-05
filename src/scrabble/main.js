@@ -4,8 +4,8 @@ const n = Number(prompt("> "));
 const odpowiedzi = [];
 
 function all(iter) {
-    for (let i = 0; i < iter.length; i++) {
-        if (!iter[i]) {
+    for (elem of iter) {
+        if (!elem) {
             return false;
         }
     }

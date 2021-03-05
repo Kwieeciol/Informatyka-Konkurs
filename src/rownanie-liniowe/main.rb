@@ -26,5 +26,5 @@ elsif values[0] == 0
 end
 
 a, b, c = values
-x = a / (func.call(b, c))
+x = (func.call(b, c)) / a
 puts "x = #{x}"

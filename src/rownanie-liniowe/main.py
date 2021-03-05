@@ -27,7 +27,7 @@ elif values[0] == 0:
     exit("x nie może być 0")
 
 a, b, c = values
-x = a / func(b, c)
+x = func(b, c) / a
 print(f"x = {x}")
 
 # Rozwiązanie zrobione zgodnie z pseudokodem

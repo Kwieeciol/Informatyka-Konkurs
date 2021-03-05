@@ -27,5 +27,5 @@ if (values.length != 3) {
 }
 
 let [a, b, c] = values;
-let x = a / func(b, c)
+let x = func(b, c) / a
 console.log(`x = ${x}`);
