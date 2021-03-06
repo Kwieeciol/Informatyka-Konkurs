@@ -37,7 +37,7 @@ class ExponentialBackoff {
 }
 
 
-const backoff = new ExponentialBackoff({integral: false});
+const backoff = new ExponentialBackoff({integral: true});
 
 for (let i = 0; i < 10; i++) {
 	console.log(backoff.delay());
