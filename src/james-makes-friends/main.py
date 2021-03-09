@@ -30,17 +30,5 @@ while len(copy) > 1:
         if len(values) == 2 and len(values2) == 2:
             output.append(min(values) * min(values2))
 
-        # if len(values) >= 2:
-        #     copy.remove(m)
-        #     m2 = max(copy)
-        #     print(m, m2)
-        #     values2 = [elem for elem in copy if m2 - elem == 1]
-            # print(values2)
-
-        # copy.remove(m2)
-    #     values2 = []
-    #     print(m, values1)
-        # if len(values) >= 2:
-        #     pass
 
 print(sum(output))
