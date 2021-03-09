@@ -1,10 +1,8 @@
-d = 10  # Dystans pomiędzy A i B
-bi = 9 # KM na pełnym baku
-g = 6   # Dystans między A i G
-n = 4   # Liczba kursów
-t = 0   # Liczba tankowań
-b = bi  # Stan baku (zmienna)
+d, bi, g, n = [int(x) for x in input("> ").split()]
+t = 0
+b = bi
 
+# Warunki możliwości przeprowadzenia rejsu
 if b < g:
     exit("NIE")
 
