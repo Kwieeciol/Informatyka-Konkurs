@@ -1,28 +1,46 @@
-d, b, g, n = 10, 20, 6, 4
-gb = d - g
+d = 10  # Dystans pomiędzy A i B
+bi = 9 # KM na pełnym baku
+g = 6   # Dystans między A i G
+n = 4   # Liczba kursów
+t = 0   # Liczba tankowań
+b = bi  # Stan baku (zmienna)
 
-"""
+if b < g:
+    exit("NIE")
 
-d = dystans między Alokacją i Binarią (mile morskie)
-b = pojemność na mile morskie
-h = dystans między Gazoliną i Alokacją (mile morskie)
-n = zaplanowana ilość kursów
-bg = dystans między Binarią i Gazoliną (mile morskie)
+if b < 2 * (d - g):
+    exit("NIE")
 
-"""
+if b < 2 * g:
+    exit("NIE")
 
-paliwo = b
-total_runs = 0
+for k in range(1, n + 1):
+    if k == 1:
+        if b - g < 2 * (d - g):
+            t += 1
+            b = bi
+        else:
+            b -= g
 
-for i in range(1, n + 1):
-    print(paliwo)
-    if i % 2 != 0:
-        # Jedziemy z Alokacji do Binarii
-        pass
-    else:
-        # Jedziemy z Binarii do Alokacji
-        pass
+    elif k == n:
+        if b - 2 * (d - g) < g:
+            t += 1
+            b = bi
+        else:
+            b -= 2 * (d - g)
+        
+    elif k % 2 == 0:
+        if b - 2 * g < 2 * g:
+            t += 1
+            b = bi
+        else:
+            b -= 2 * (d - g)
 
-    paliwo -= d
+    elif k % 2 != 0:
+        if b - 2 * g < 2 * (d - g):
+            t += 1
+            b = bi
+        else:
+            b -= 2 * g
 
-print('\n', total_runs)
+print(t)
