@@ -5,7 +5,7 @@ nazwiska = [
     "Nowak Lis".split(),
     "Lis Kozak".split()
 ]
-
+# TEST
 unique_names = list(set([imie for imiona in nazwiska for imie in imiona]))
 mapping = {name: [] for name in unique_names} 
 
@@ -27,13 +27,3 @@ out = []
 
 for name in unique_names:
     is_tallest = all([who_is_taller(name, x) == name for x in unique_names if x != name])
-    if is_tallest:
-
-#     for x in unique_names:
-#         print(who_is_taller(name, x), x)
-#     break
-#     # print([who_is_taller(name, x) == name for x in unique_names if x != name])
-#         # print(name) # Jest najwyższy)
-#     # if all(who_is_taller(name, x) == name for x in unique_names if x != name):
-#     #     print(name) # Jest najwyższy
-#     # else:?
