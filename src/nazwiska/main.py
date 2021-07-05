@@ -5,7 +5,7 @@ nazwiska = [
     "Nowak Lis".split(),
     "Lis Kozak".split()
 ]
-# TEST
+
 unique_names = list(set([imie for imiona in nazwiska for imie in imiona]))
 mapping = {name: [] for name in unique_names} 
 
